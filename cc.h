@@ -22,6 +22,19 @@ void setup()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+    cout.tie(NULL);
+}
+
+template<class Iter, class T>
+Iter binary_find(Iter begin, Iter end, T val)
+{
+    // Finds the lower bound in at most log(last - first) + 1 comparisons
+    Iter i = std::lower_bound(begin, end, val);
+
+    if (i != end && !(val < *i))
+        return i; // found
+    else
+        return end; // not found
 }
 
 void flushFileBuffer(){
@@ -33,11 +46,11 @@ void flushInputBuffer()
     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-void fastInt(int &number)
+inline void fastInt(int &number)
 {
 
     bool negative = false;
-    register int c;
+    int c;
 
     number = 0;
 
