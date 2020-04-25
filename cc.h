@@ -67,12 +67,12 @@ Iter binary_find(Iter begin, Iter end, T val)
         return end; // not found
 }
 
-void flushFileBuffer()
+void fbflush()
 {
     cin.ignore(std::numeric_limits<std::streamsize>::max());
 }
 
-void flushInputBuffer()
+void ibflush()
 {
     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
