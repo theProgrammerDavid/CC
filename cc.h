@@ -25,7 +25,37 @@ void setup()
     cout.tie(NULL);
 }
 
-template<class Iter, class T>
+/** accepts a string which is a line from the file and splits it using the delimiter
+    and stores the individual fields in a vector of type string 
+    @param str: string to split up
+    @param delim: string to separate it by
+    @param parts; vector of type string which has all the separated parts
+*/
+
+void strig_split(const string &str, const string &delim, vector<string> &parts)
+{
+
+    size_t start, end = 0;
+    while (end < str.size())
+    {
+        start = end;
+        while (start < str.size() && (delim.find(str[start]) != string::npos))
+        {
+            start++; // skip initial whitespace
+        }
+        end = start;
+        while (end < str.size() && (delim.find(str[end]) == string::npos))
+        {
+            end++; // skip to end of word
+        }
+        if (end - start != 0) // just ignore zero-length strings.
+        {
+            parts.push_back(string(str, start, end - start));
+        }
+    }
+}
+
+template <class Iter, class T>
 Iter binary_find(Iter begin, Iter end, T val)
 {
     // Finds the lower bound in at most log(last - first) + 1 comparisons
@@ -37,7 +67,8 @@ Iter binary_find(Iter begin, Iter end, T val)
         return end; // not found
 }
 
-void flushFileBuffer(){
+void flushFileBuffer()
+{
     cin.ignore(std::numeric_limits<std::streamsize>::max());
 }
 
@@ -57,7 +88,7 @@ inline void fastInt(int &number)
     c = getchar();
     if (c == '-')
     {
-    
+
         negative = true;
         c = getchar();
     }
@@ -80,7 +111,5 @@ inline int fast_atoi(char *&data)
     ++data;
     return val;
 }
-
-
 
 #endif
