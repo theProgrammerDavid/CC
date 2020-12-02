@@ -111,5 +111,15 @@ inline int fast_atoi(char *&data)
     ++data;
     return val;
 }
+template <class T>
+void printVector(vector<T> vec){
+    
+    cout<<"\n";
+    
+    for(T x:vec){
+        cout<<x<<" ";
+    }
+    cout<<"\n";
+}
 
 #endif
