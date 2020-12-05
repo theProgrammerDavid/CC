@@ -6,7 +6,7 @@ int main() {
 	int T;
 	string x;
 	cin>>T;
-	
+
 	for(int i=0;i<T;i++){
 	    cin>>x;
 	    cout<<x.size()<<"\n";
