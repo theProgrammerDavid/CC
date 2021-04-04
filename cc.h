@@ -112,14 +112,24 @@ inline int fast_atoi(char *&data)
     return val;
 }
 template <class T>
-void printVector(vector<T> vec){
-    
-    cout<<"\n";
-    
-    for(T x:vec){
-        cout<<x<<" ";
+void printVector(vector<T> &vec)
+{
+
+    cout << "\n";
+
+    for (T x : vec)
+    {
+        cout << x << " ";
     }
-    cout<<"\n";
+    cout << "\n";
 }
 
+template <class T>
+void printVector(vector<T> &vec, size_t n)
+{
+    for (size_t i = 0; i < n; i++)
+    {
+        cout << vec[i] << " ";
+    }
+}
 #endif
