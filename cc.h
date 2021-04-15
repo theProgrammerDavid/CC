@@ -25,34 +25,19 @@ void setup()
     cout.tie(NULL);
 }
 
-/** accepts a string which is a line from the file and splits it using the delimiter
-    and stores the individual fields in a vector of type string 
-    @param str: string to split up
-    @param delim: string to separate it by
-    @param parts; vector of type string which has all the separated parts
-*/
-
-void strig_split(const string &str, const string &delim, vector<string> &parts)
+template <class T>
+T slice(vector<T> vec, size_t start, size_t end)
 {
+    vector<T>::const_iterator first = vec.begin() + start;
+    vector<T>::const_iterator last = vec.begin() + end;
+    return vector<T> newVec(first, last);
+}
 
-    size_t start, end = 0;
-    while (end < str.size())
-    {
-        start = end;
-        while (start < str.size() && (delim.find(str[start]) != string::npos))
-        {
-            start++; // skip initial whitespace
-        }
-        end = start;
-        while (end < str.size() && (delim.find(str[end]) == string::npos))
-        {
-            end++; // skip to end of word
-        }
-        if (end - start != 0) // just ignore zero-length strings.
-        {
-            parts.push_back(string(str, start, end - start));
-        }
-    }
+vector<string> split_string(const string &line)
+{
+    stringstream ss(line);
+    vector<string> tokens{istream_iterator<string>{ss}, istream_iterator<string>{}};
+    return tokens;
 }
 
 template <class Iter, class T>
