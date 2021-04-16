@@ -1,4 +1,4 @@
 ## Algo cheat sheets
 
-📜 [Recursion](Algos/Recursion)
+📜 [Recursion](Recursion)
 📜 [Sorting](Algos/Sorting)
