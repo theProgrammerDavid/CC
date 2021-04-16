@@ -3,6 +3,6 @@
 
 📦cheat_sheets <br/>
  ┣ 📂[Algos](cheat_sheets/Algos/index) <br/>
- ┣ 📂[C++](C++/index) <br/>
- ┣ 📂[Data Structures](Data%20Structures/index) <br/>
- ┗ [📂Java](Java/index) <br/>
+ ┣ 📂[C++](cheat_sheets/C++/index) <br/>
+ ┣ 📂[Data Structures](cheat_sheets/Data%20Structures/index) <br/>
+ ┗ [📂Java](cheat_sheets/Java/index) <br/>

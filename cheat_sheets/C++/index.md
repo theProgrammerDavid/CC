@@ -1,8 +1,8 @@
 ## C++ Index
 
-📜 [Map](C++/map)
-📜 [Miscallaneous](C++/misc)
-📜 [Sets](C+/set)
-📜 [Vector](C+/vector)
+📜 [Map](C++/map) <br/>
+📜 [Miscallaneous](C++/misc) <br/>
+📜 [Sets](C+/set) <br/>
+📜 [Vector](C+/vector) <br/>
 
 
