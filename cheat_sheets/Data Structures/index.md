@@ -1,3 +1,3 @@
 ## Linked List index
 
-📜 [LinkedLists](Data%Structures/LinkedLists) <br/>
+📜 [LinkedLists](LinkedLists) <br/>

@@ -1,5 +1,5 @@
 ## Java Index
 
-📜 [Arrays](Java/Arrays) <br/>
-📜 [Introduction](Java/intro) <br/>
-📜 [Sets](Java/sets) <br/>
+📜 [Arrays](Arrays) <br/>
+📜 [Introduction](intro) <br/>
+📜 [Sets](sets) <br/>
