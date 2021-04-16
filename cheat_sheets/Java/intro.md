@@ -13,6 +13,8 @@ float f1 = 35e3f;
 double d1 = 12E4d;
 ```
 
+
+
 * Non Primitive - ``java.lang.String`` 
   `Java.lang.String` and `char` are Unicode by default. Provides string manipulation functions
 
@@ -41,26 +43,26 @@ Sysout with `System.out.println` where `System.out` is the default output stream
 
 > Assuming you have a JDK setup
 
-* compile with 
+* Compile with 
 
 ```bash
 javac Stuff.java
 ```
 
-* run with 
+* Run with 
 
 ```bash
 java Stuff arg1 arg2
 ```
 
-where arg1 and arg2 are your command line arguments which are passed into ``String args[]`` in the ``main`` function.
+where `arg1` and `arg2` are your command line arguments which are passed into ``String args[]`` in the ``main`` function.
 
 
 ### String Stuff
 
 ```java
 int number = 823;
-System.out.println(“Today’s lotto number is:  ” + number);
+System.out.println("Today’s lotto number is:  " + number);
 
 ```
 
@@ -80,15 +82,15 @@ String s = new String(a);
 System.out.println(test.contains("learning"));
 ```
 
-* compareTo
+* `compareTo`
 
-compareTo returns
+`compareTo` returns
 
-* a negative number if String_1 precedes String_2
-* zero if the two strings are equal
-* a positive number of String_2 precedes String_1
+* A negative number if String_1 precedes String_2
+* Zero if the two strings are equal
+* A positive number of String_2 precedes String_1
 
-> Tip: Think of compareTo is subtraction
+> Tip: Think of `compareTo` is subtraction
 
 ### Math
 
@@ -102,7 +104,7 @@ double ans = 10*Math.PI;
 
 #### Stuff 
 
-* use the ``final``  keyword to declare constants 
+* Use the ``final``  keyword to declare constants 
 * Cannot override methods declared as final (inheritance stuff)
 * Cannot inherit classes declared as final
 * Array 
@@ -127,7 +129,7 @@ xyz.y;
 * Arrays
   * Accessing an array element beyond the size will lead to an ``ArrayIndexOutOfBoundsException`` being thrown
   * Unlike ``Python``, negative indexes will not wrap around to the other side
-  * The size of the array needs to be known at compile time. Thus, you can initialize an array with a variable as long as the value can be computed at compile time
+  * The size of the array needs to be known at compile time. Thus, you can initialise an array with a variable as long as the value can be computed at compile time
 
 ```java
 int arr[] = new int[10];
@@ -157,8 +159,8 @@ int[][] uneven = { { 1, 9, 4 },
 ```
 
 * switch case
-  * can use strings, int , char, boolean and not floating point numbers
-  * no complex expressions in each case statement, just a constant 
+  * Can use `Strings`, `int` , `char`, `boolean` and <strong>not</strong> floating point numbers
+  * No complex expressions in each case statement, just a constant 
 
 ### Error Handling
 
@@ -233,12 +235,13 @@ br.close();
 
 #### Packages
 
-* specify ``package xyz;`` at the top of your java files to group together src files present in the same folder under one package.
+* Specify ``package xyz;`` at the top of your java files to group together src files present in the same folder under one package.
 
+### Inheritance and stuff
 
-### Inheritence and stuff
+![Types of Inheritance](https://dotnettrickscloud.blob.core.windows.net/img/oops/types-of-inheritance-c-sharp.png)
 
-* we use the ``extends`` keyword
+* We use the ``extends`` keyword
 
 ```java
 class A{
@@ -249,8 +252,8 @@ class B extends A{
 }
 ```
 
-* ``abstract`` classes cannot be instantiated, only inherited. 
-* an ``interface`` is a way Java implements multiple inheritance. You ``implement`` an interface
+* An ``abstract`` class cannot be instantiated, only inherited. 
+* An ``interface`` is a way Java implements multiple inheritance. You ``implement`` an interface
 
 ```java
 interface xyz{
@@ -271,7 +274,7 @@ class outer
 {
 	public String a;
 	protected String b;
-	private string c;
+	private String c;
 	class inner
 	{
 		public String in1;
@@ -365,6 +368,8 @@ s.displaymessage();
 ```java
 protected void finalize throws Throwable{}
 ```
+
+- A sample program would be - 
 
 ```java
 public class demo {
