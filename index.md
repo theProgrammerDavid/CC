@@ -2,7 +2,7 @@
 
 
 📦cheat_sheets <br/>
- ┣ 📂Algos <br/>
+ ┣ 📂[Algos](https://theprogrammerdavid.github.io/CC/cheat_sheets/Algos/index) <br/>
  ┃ ┣ 📜Recursion.md <br/>
  ┃ ┗ 📜Sorting.md <br/>
  ┣ 📂C++ <br/>
