@@ -14,7 +14,7 @@
           int pivot = input.length/2;
           
           int[] leftArray = merge_sort(Arrays.copyOfRange(input, 0, pivot));
-          int[] rightArray = merge_sort(Arrays.copyOfRange(input,pivot, 													input.length));
+          int[] rightArray = merge_sort(Arrays.copyOfRange(input,pivot,input.length));
           
           return merge(leftArray, rightArray);
       	}

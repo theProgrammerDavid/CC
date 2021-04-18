@@ -46,3 +46,12 @@
     ```
 
     
+
+- Remove duplicate elements from vector
+  `std::unique(begin, end)` returns an iterator to the position of the vector _after_ which, the vector contains duplicate elements
+
+  ```c++
+          nums.erase(unique(nums.begin(),nums.end()),nums.end());
+  ```
+
+  

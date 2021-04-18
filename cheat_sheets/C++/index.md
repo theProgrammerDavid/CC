@@ -1,7 +1,7 @@
 ## C++ Index
 
 📜 [Map](map) <br/>
-📜 [Miscallaneous](misc) <br/>
+📜 [Miscellaneous](misc) <br/>
 📜 [Sets](set) <br/>
 📜 [Vector](vector) <br/>
 
