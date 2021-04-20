@@ -217,6 +217,19 @@ catch(ArithmeticException e){
 
 ```
 
+- Alternatively, to see where the `exception` originated, you can 
+
+  ```java
+  try{
+      //something
+  }
+  catch(Exception e){
+      e.printStackTrace();
+  }
+  ```
+
+  
+
 - User Defined Exceptions
 
   ```java
@@ -232,7 +245,8 @@ catch(ArithmeticException e){
   }
   ```
 
-  
+
+
 
 ### User Input
 
