@@ -202,6 +202,51 @@ finally{
 }
 ```
 
+> What if we want to chain exceptions one after the other ?
+
+```java
+
+try{
+    throw new ArithmeticException("divide by zero").cause(new SQLException("could not fetch data"));
+}
+catch(ArithmeticException e){
+	System.out.print(e.getMessage());
+    System.out.println(e.getCause());
+}
+
+
+```
+
+- Alternatively, to see where the `exception` originated, you can 
+
+  ```java
+  try{
+      //something
+  }
+  catch(Exception e){
+      e.printStackTrace();
+  }
+  ```
+
+  
+
+- User Defined Exceptions
+
+  ```java
+  class MyException extends Exception{
+      int a;
+     
+      MyException(int b){
+          a=b;
+      }
+      public String toString(){
+          return "Exception number = "+a;
+      }
+  }
+  ```
+
+
+
 
 ### User Input
 
