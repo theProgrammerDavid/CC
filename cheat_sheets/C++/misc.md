@@ -37,3 +37,13 @@
   cout << INT_MAX << INT_MIN;
 ```
 
+- Setting an int to `infinity`
+
+  ```c++
+  #include <limits>
+  
+  int a = std::numeric_limits<int>::max();
+  float b = std::numeric_limits<float>::infinity();
+  ```
+
+  

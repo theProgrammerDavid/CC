@@ -37,3 +37,30 @@ for(it = m.begin();i!=m.end(); ++itr){
 }
 ```
 > `std::map<int,int>::iterator` it can be replaced with `auto`
+
+- Finding an element in a map
+
+  ```c++
+  if(m.find(2) != m.end()){
+      // do something
+  }
+  ```
+
+  `m.find(val)` returns an iterator to the position of the element. If element is not found, the returned iterator will be equal to the end of the container
+
+
+
+
+
+### Unordered Map
+
+- Insert into `unordered_map` 
+
+  ```c++
+  unordered_map<int, int> m;
+  m[1] = 10;
+  m[2] = 20;
+  
+  ```
+
+  
