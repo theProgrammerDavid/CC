@@ -1,5 +1,11 @@
 # Misc C++ STL Stuff
 
+- Faster I/O
+```c++
+#pragma GCC optimize("Ofast")
+static auto _ = [] () {ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
+```
+
 - max element in a container
 
   ```c++
@@ -37,3 +43,13 @@
   cout << INT_MAX << INT_MIN;
 ```
 
+- Setting an int to `infinity`
+
+  ```c++
+  #include <limits>
+  
+  int a = std::numeric_limits<int>::max();
+  float b = std::numeric_limits<float>::infinity();
+  ```
+
+  
