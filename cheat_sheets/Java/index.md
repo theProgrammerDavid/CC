@@ -7,4 +7,9 @@
 📜 [File Handling](fileStuff) <br/>
 📜 [Functional Interfaces](functionalInterfaces) <br/>
 📜 [Threads](threads) <br/>
+📜 [Calendar](calendar) <br/>
+📜 [Conversions](conversions) <br/>
+📜 [Java FX](JavaFX) <br/>
+📜 [JDBC](JDBC) <br/>
+📜 [StringBuffer](StringBuffer) <br/>
 
