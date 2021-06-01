@@ -10,6 +10,13 @@
 
   Use the command line argument `-cp .:<name of jar file>` 
 
+  ```bash
+  javac test1.java
+  java -cp .:mysql-connector-java-8.0.25.jar test1
+  ```
+
+  
+
   Your source code can now look like this 
 
   ```java
