@@ -3,6 +3,7 @@
 
 📦cheat_sheets <br/>
  ┣ 📂[Algos](cheat_sheets/Algos/index) <br/>
+ ┣ 📂[CUDA](cheat_sheets/CUDA/index) <br/>
  ┣ 📂[C++](cheat_sheets/C++/index) <br/>
  ┣ 📂[Data Structures](cheat_sheets/Data%20Structures/index) <br/>
  ┣ 📂[General Stuff](cheat_sheets/GeneralStuff/index) <br/>
