@@ -1,6 +1,6 @@
 ### How to MPI
 
-Ubuntu 20.04 - 
+Ubuntu 20.04 -
 
 ```bash
 sudo apt install mpich
@@ -10,7 +10,7 @@ sudo apt install mpich
 
 #include <mpi.h>
 
-void main( int argc, char** argv ) 
+void main( int argc, char** argv )
 {
     MPI_Init( &argc, &argv );
 
@@ -22,24 +22,22 @@ void main( int argc, char** argv )
 
 ```
 
-
-
-- ​	The Hello World of MPI
+- ​ The Hello World of MPI
 
   ```C
-  
+
   #include <mpi.h>
   #include <stdio.h>
   int main(int argc, char *argv[])
   {
-      int rank, size; 
-      
+      int rank, size;
+
       MPI_Init(&argc, &argv);
       MPI_Comm_rank(MPI_COMM_WORLD, &rank);
       MPI_Comm_size(MPI_COMM_WORLD, &size);
-      
+
       printf("I am %d of %d\n", rank, size);
-      
+
       MPI_Finalize();
       return 0;
   }
@@ -51,23 +49,21 @@ Data Types
 
 > `MPI` has their own stuff coz why not
 
-
-
-| MPI Datatype | C Datatype  |
-| ------------ | ----------- |
-| MPI_CHAR     | signed char |
-|MPI_CHAR					|			signed char|
-|MPI_SIGNED_CHAR			|	signed char|
-|MPI_UNSIGNED_CHAR	|		unsigned char|
-|MPI_SHORT			|					signed short|
-|MPI_UNSIGNED_SHORT	|	unsigned short|
-|MPI_INT			|						signed int|
-|MPI_UNSIGNED		|				unsigned int|
-|MPI_LONG			|					signed long|
-|MPI_UNSIGNED_LONG	|	unsigned long|
-|MPI_FLOAT						|		float|
-|MPI_DOUBLE			|				double|
-|MPI_LONG_DOUBLE			|	long double|
+| MPI Datatype       | C Datatype     |
+| ------------------ | -------------- |
+| MPI_CHAR           | signed char    |
+| MPI_CHAR           | signed char    |
+| MPI_SIGNED_CHAR    | signed char    |
+| MPI_UNSIGNED_CHAR  | unsigned char  |
+| MPI_SHORT          | signed short   |
+| MPI_UNSIGNED_SHORT | unsigned short |
+| MPI_INT            | signed int     |
+| MPI_UNSIGNED       | unsigned int   |
+| MPI_LONG           | signed long    |
+| MPI_UNSIGNED_LONG  | unsigned long  |
+| MPI_FLOAT          | float          |
+| MPI_DOUBLE         | double         |
+| MPI_LONG_DOUBLE    | long double    |
 
 ###### MPI Blocking send
 
@@ -95,15 +91,13 @@ MPI_RECV(void *start, int count, MPI_DATATYPE datatype, int source, int tag, MPI
 
 - `MPI_STATUS` is a `C struct`
 
-
-
 [Sample Program](https://github.com/theProgrammerDavid/VIT-LABs/blob/master/MPI/two.c)
 
->  Compile Instructions
-> ``mpicc ./sample.c`` 
+> Compile Instructions
+> `mpicc ./sample.c`
 >
 > Run with 4 hosts
-> ``mpirun -n 4 ./a.out``
+> `mpirun -n 4 ./a.out`
 
 ```c
 #include <stdlib.h>
@@ -158,21 +152,18 @@ int main(int argc, char *argv[])
 }
 ```
 
-- Non blocking send and receive 
+- Non blocking send and receive
 
   ```c++
   MPI_ISEND(buf, count, datatype, dest, tag, comm, request)
   MPI_IRECV(buf, count, datatype, dest, tag, comm, request)
   ```
 
-  A non-blocking send call indicates that the system may start copying data out of the send buffer. The sender must not access any part of the send buffer after a non-blocking send operation is posted, until the complete-send returns. 
+  A non-blocking send call indicates that the system may start copying data out of the send buffer. The sender must not access any part of the send buffer after a non-blocking send operation is posted, until the complete-send returns.
 
-  A non-blocking receive indicates that the system may start writing data into the receive buffer. The receiver must not access any part of the receive buffer after a non-blocking receive operation is posted, until the complete-receive returns. 
+  A non-blocking receive indicates that the system may start writing data into the receive buffer. The receiver must not access any part of the receive buffer after a non-blocking receive operation is posted, until the complete-receive returns.
 
-  
-
-  ``MPI_WAIT (request, status)
-  MPI_TEST (request, flag, status)``
+  `MPI_WAIT (request, status) MPI_TEST (request, flag, status)`
 
   The `MPI_WAIT` will block your program until the non-blocking send/receive with the desired request is done.
 
@@ -184,12 +175,69 @@ Collective Operations
 
   `MPI_Bcast` distributes data from one process(the root) to all others in a communicator.
 
-  Syntax: 
-  ``MPI_Bcast(void *message, int count, MPI_Datatype datatype, int root, MPI_Comm comm)``
-
-  
+  Syntax:
+  `MPI_Bcast(void *message, int count, MPI_Datatype datatype, int root, MPI_Comm comm)`
 
 - `MPI_Reduce`MPI_Reduce combines data from all processes in communicator or and returns it to one process
 
-  Syntax: 
-  	``MPI_Reduce(void *message, void *recvbuf, int count, MPI_Datatype datatype, MPI_Op op, int root, MPI_Comm comm)``
+  Syntax:
+  `MPI_Reduce(void *message, void *recvbuf, int count, MPI_Datatype datatype, MPI_Op op, int root, MPI_Comm comm)`
+
+### Sample Broadcase Program
+
+> Compile Instructions
+> `mpicc ./sample.c`
+>
+> Run with 4 hosts
+> `mpirun -n 4 ./a.out`
+
+```c++
+#include <stdio.h>
+#include <stdlib.h>
+#include <mpi.h>
+void my_bcast(void *data, int count, MPI_Datatype datatype, int root, MPI_Comm communicator)
+{
+    int world_rank;
+    MPI_Comm_rank(communicator, &world_rank);
+    int world_size;
+    MPI_Comm_size(communicator, &world_size);
+
+    if (world_rank == root)
+    {
+        int i;
+        for (i = 0; i < world_size; i++)
+        {
+            if (i != world_rank)
+            {
+                MPI_Send(data, count, datatype, i, 0, communicator);
+            }
+        }
+    }
+    else
+    {
+        MPI_Recv(data, count, datatype, root, 0, communicator, MPI_STATUS_IGNORE);
+    }
+}
+int main(int argc, char **argv)
+{
+    MPI_Init(NULL, NULL);
+
+    int world_rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+
+    int data;
+    if (world_rank == 0)
+    {
+        data = 100;
+        printf("Process 0 broadcasting data %d\n", data);
+        my_bcast(&data, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    }
+    else
+    {
+        my_bcast(&data, 1, MPI_INT, 0, MPI_COMM_WORLD);
+        printf("Process %d received data %d from root process\n", world_rank, data);
+    }
+
+    MPI_Finalize();
+}
+```
