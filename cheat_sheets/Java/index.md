@@ -2,6 +2,7 @@
 
 📜 [Introduction](intro) <br/>
 📜 [Arrays](Arrays) <br/>
+📜 [Collections](collections) <br/>
 📜 [Sets](sets) <br/>
 📜 [Anonymous Classes](anonymousClasses) <br/>
 📜 [File Handling](fileStuff) <br/>
