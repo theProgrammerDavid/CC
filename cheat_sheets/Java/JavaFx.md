@@ -23,7 +23,7 @@
 
 - All `JavaFx` programs have a class that `extends` `javafx.application.Application`
 
-```java
+​```java
 import javafx.application.Application;
 import javafx.stage.Stage;
 public class demo extends Application{
@@ -33,7 +33,7 @@ public class demo extends Application{
     @Override
     public void start(Stage primaryStage)throws Exception
 }
-```
+  ```
 
 - Every `JavaFx` application has the following components :
 
@@ -51,18 +51,18 @@ public class demo extends Application{
   import javafx.scene.control.*; //Button
   import javafx.scene.layout.*; // HBox
   import javafx.scene.*; //Scene
-
+  
   public class demo1 extends Application {
       public static void main(String[] args) {
           launch();
       }
-
+  
       @Override
       public void start(Stage primaryStage) throws Exception{
           Button b = new Button("Click Me");
-
+  
           HBox hb = new HBox();
-
+  
           hb.getChildren().add(b);
           Scene s = new Scene(hb);
           primaryStage.setScene(s);
@@ -181,11 +181,26 @@ public class demo extends Application{
     HyperLink link1 = new HyperLink("http://something.com");
     ```
 
+- GridPane
+
+  ```java
+    GridPane grid = new GridPane();
+    grid.addRow(6, errorLabel);
+    
+    grid.add(textFieldLabel, 0, 0);
+  // component, column, row
+    
+    grid.setHgap(10);
+    grid.setVgap(10);
+  ```
+
+  
+
   - `ComboBox`
 
     ```java
     import javafx.scene.control.ComboBox;
-
+    
     ComboBox<String> stuff = new ComboBox<String>();
     stuff.getItems().add("English");
     stuff.getItems().add("Physics");

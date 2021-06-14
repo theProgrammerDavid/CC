@@ -46,3 +46,44 @@
   ```
 
   
+
+![jdbc statement execution](https://i.stack.imgur.com/V6fjm.png)
+
+
+
+- Result Set
+
+```java
+Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        ResultSet rs = st.executeQuery(s);
+
+if (rs.next()==false){
+    System.out.println("empty");
+}
+else{
+    rs.previous();
+    System.out.println(rs.getString(1) + rs.getString(2) + ...);
+}
+```
+
+
+
+- Prepared Statement
+
+  ```java
+   public boolean insert(Connection con) throws SQLException {
+          PreparedStatement ps = con.prepareStatement("INSERT INTO STUDENTS VALUES(?,?,?,?,?);");
+          ps.setString(1, name);
+          ps.setString(2, password);
+          ps.setString(3, gender);
+          ps.setString(4, country);
+          ps.setString(5, subject);
+  
+          int i = ps.executeUpdate();
+          System.out.println(i);
+  
+          return i > 0;
+      }
+  ```
+
+  
