@@ -23,6 +23,9 @@ std::map<int, int> m;
 
 m.insert(pair<int, int>(1,2));
 m.insert(pair<int, int>(3,5));
+// OR we can use an initializer list
+m.insert({1,2})
+
 
 //remove all elements upto element with key=3
 m.erase(m.begin(), m.find(3));

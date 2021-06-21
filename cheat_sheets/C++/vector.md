@@ -46,3 +46,11 @@
     ```
 
     
+
+- Remove duplicate elements 
+
+  ```c++
+  vec.resize(std::distance(vec.begin(), std::unique(vec.begin(), vec.end())));
+  ```
+
+  
