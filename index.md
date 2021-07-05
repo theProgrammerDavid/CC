@@ -8,6 +8,7 @@
  ┣ 📂[Data Structures](cheat_sheets/Data%20Structures/index) <br/>
  ┣ 📂[General Stuff](cheat_sheets/GeneralStuff/index) <br/>
  ┣ 📂[Important Programs](cheat_sheets/ImpPrograms/index) <br/>
+ ┣ 📂[Python](cheat_sheets/Python/index) <br/>
  ┣ 📂[Java](cheat_sheets/Java/index) <br/>
  ┣ 📂[MPI](cheat_sheets/MPI/index) <br/>
  ┣ 📂[OpenMP](cheat_sheets/OpenMP/index) <br/>
