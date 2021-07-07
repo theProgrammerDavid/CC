@@ -1,5 +1,6 @@
 ## C++ Index
 
+📜 [CString](cstring) <br/>
 📜 [Map](map) <br/>
 📜 [Miscellaneous](misc) <br/>
 📜 [Sets](set) <br/>
