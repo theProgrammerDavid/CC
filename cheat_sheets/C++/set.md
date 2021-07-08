@@ -9,9 +9,10 @@
   
   //c++ 20
   const bool is_in = s.contains(element);
-  
-//insert
+
+  //insert  
   s.insert(4);
+
   ```
   
   
