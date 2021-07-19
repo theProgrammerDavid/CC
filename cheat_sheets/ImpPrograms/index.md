@@ -1,4 +1,5 @@
 ## Important Programs index
 
-📜 [Maximum Subarray](maxSubarray.md) <br/>
-
+📜 [BFS](BFS.md) <br/>
+📜 [DFS](DFS.md) <br/>
+📜 [Paranthesis Matching](ParanthesisMatching.md) <br/>
