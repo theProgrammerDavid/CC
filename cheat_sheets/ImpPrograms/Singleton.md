@@ -1,6 +1,8 @@
 ### Singleton
 > Complete Article [here](https://www.modernescpp.com/index.php/thread-safe-initialization-of-a-singleton)
+
 - Meyers Singleton
+
 ```c++
 class MySingleton{
 public:
@@ -18,6 +20,7 @@ private:
 ```
 
 - Singleton using C++ Atomics
+
 ```c++
 class AtomicSingleton
 {
