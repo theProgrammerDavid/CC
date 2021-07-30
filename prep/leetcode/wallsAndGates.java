@@ -1,3 +1,5 @@
+package prep.leetcode;
+
 import java.util.*;
 
 class Solution {
