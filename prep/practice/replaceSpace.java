@@ -1,3 +1,4 @@
+package prep.practice;
 
 /**
  * replaceSpace
