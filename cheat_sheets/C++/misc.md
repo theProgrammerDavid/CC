@@ -52,4 +52,16 @@ static auto _ = [] () {ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.ti
   float b = std::numeric_limits<float>::infinity();
   ```
 
+- Checking if your system is `little endian` or `big endian`
+```c++
+#define BIG_ENDIAN 0
+#define LITTLE_ENDIAN 1
+
+int TestByteOrder()
+{
+    short int word = 0x0001;
+    char *byte = (char *)&word;
+    return (byte[0] ? LITTLE_ENDIAN : BIG_ENDIAN);
+}
+```
   
