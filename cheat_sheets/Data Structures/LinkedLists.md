@@ -1,75 +1,97 @@
--  # Linked Lists
+- # Linked Lists
 
-      ```c++
-      struct Node{
-          int val;
-          Node *next;
-          Node(int x): val(x), next(NULL){}
-      }
-      ```
+     ```c++
+     struct Node{
+         int val;
+         Node *next;
+         Node(int x): val(x), next(NULL){}
+     }
+     ```
 
-      ```java
-    public class Node{
-          int val;
-          Node next;
-          Node(int x)
-          {
-              val=x;
-          }
-      }
-      ```
+     ```java
+     public class Node{
+           int val;
+           Node next;
+           Node(int x)
+           {
+               val=x;
+           }
+       }
+     ```
 
-    - Information
-      - ``O(n)`` for traversal
+     - Information
+       - ``O(n)`` for traversal
 
-    - get `ith` element from head
+     - get `ith` element from head
 
-      ```c++
-      ListNode* getNode(int index){
-          ListNode *temp = head;
-          for(int i=0;i<index;i++){
-              temp = temp->next;
-          }
-        return temp;
-      }
-      ```
+       ```c++
+       ListNode* getNode(int index){
+           ListNode *temp = head;
+           for(int i=0;i<index;i++){
+               temp = temp->next;
+           }
+         return temp;
+       }
+       ```
 
-    - print linked list in reverse
+     - print linked list in reverse
 
-      ```c++
-          void printLinkedListInReverse(ImmutableListNode* head) {
-                  if(head !=nullptr){
-                      printLinkedListInReverse(head->getNext());
-                      cout<<head->val<<' ';
-                      return ;
-              }
-                  
-          ```
+       ```c++
+           void printLinkedListInReverse(ImmutableListNode* head) {
+                   if(head !=nullptr){
+                       printLinkedListInReverse(head->getNext());
+                       cout<<head->val<<' ';
+                       return ;
+               }
+                   
+       ```
 
-    - reverse a linked list
+     - reverse a linked list
 
-      ```c++
-      void ReverseList(ImmutableListNode* head) {
-             if(head==nullptr)return;
-              
-              ImmutableListNode *prev =NULL, *curr = head, *temp=NULL;
-              
-              while(curr!=NULL){
-                  
-                  temp = curr->next;
-                  
-                  //reverse the link
-                  curr->next = prev;
-                  
-                  prev = curr;
-                  curr = temp;
-              }
-              
-              head=prev;
-          }
-      ```
+       ```c++
+       void ReverseList(ImmutableListNode* head) {
+              if(head==nullptr)return;
+               
+               ImmutableListNode *prev =NULL, *curr = head, *temp=NULL;
+               
+               while(curr!=NULL){
+                   
+                   temp = curr->next;
+                   
+                   //reverse the link
+                   curr->next = prev;
+                   
+                   prev = curr;
+                   curr = temp;
+               }
+               
+               head=prev;
+           }
+       ```
 
+       ​    
+
+-  Reverse a LinkedList (Recursive Approach)
+
+     ```c++
+      ListNode* reverseList(ListNode* head) {
+          //condition to end recursion. We stop at the 2nd last node 
+            if(head==NULL || head->next == NULL) return head;
           
+          	// we save the value of p later as the value we return back from the function in reverse order
+             ListNode *p = reverseList(head->next);
+             head->next->next = head;
+          	/* Since we start from the 2nd last node, head->next->next can be thought of as
+          	(last node)->next = head
+          	and head is the 2nd last node
+          	*/
+          
+             head->next = NULL;
+          	// we want to nullify the next pointer. The next recursion call will link this node and the node before it 
+             return p;
+     ```
+
+     
 
 - Check if Linked List has loop
   Two pointers - p1 and p2. p2 has 2x speed of p1
@@ -141,7 +163,7 @@
   
   
   ```c++
-ListNode *detectCycle(ListNode *head) {
+  ListNode *detectCycle(ListNode *head) {
       if (head == NULL || head->next == NULL)
           return NULL;
       

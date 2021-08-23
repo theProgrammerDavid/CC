@@ -126,6 +126,41 @@ obj.x;
 xyz.y;
 ```
 
+​	Alternatively, you can have a `static` block. Static initialisation blocks are executed when the class is loaded, and you can initialise static variables in those blocks.
+
+```java
+
+
+public class Solution {
+
+    static int B, H;
+    static boolean flag = true;
+    static{
+        Scanner sc = new Scanner(System.in);
+        B = sc.nextInt();
+        H = sc.nextInt();
+
+        if(B<=0 || H<=0){
+            System.out.println("B and H must be posi");
+            System.exit(0);
+        }
+    }
+
+    public static void main(String[] args){
+            if(flag){
+                int area=B*H;
+                System.out.print(area);
+            }
+
+        }//end of main
+
+}//end of class
+
+
+```
+
+
+
 * Arrays
   * Accessing an array element beyond the size will lead to an ``ArrayIndexOutOfBoundsException`` being thrown
   * Unlike ``Python``, negative indexes will not wrap around to the other side
@@ -417,7 +452,7 @@ protected void finalize throws Throwable{}
 - A sample program would be - 
 
 ```java
-public class demo {
+String(Interg)public class demo {
   
     protected void finalize() throws Throwable
     {
