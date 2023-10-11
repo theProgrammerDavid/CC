@@ -1,3 +1,3 @@
 ## Leetcode Index
 
-📜 [1991](intro) <br/>
+📜 [1991](1991) <br/>

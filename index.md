@@ -12,5 +12,6 @@
  ┣ 📂[Java](cheat_sheets/Java/index) <br/>
  ┣ 📂[MPI](cheat_sheets/MPI/index) <br/>
  ┣ 📂[OpenMP](cheat_sheets/OpenMP/index) <br/>
+ ┣ 📂[Leetcode](cheat_sheets/leetcode/index) <br/>
  ┗ 📂[SQL](cheat_sheets/SQL/index) <br/>
   
