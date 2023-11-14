@@ -1,5 +1,14 @@
 # Misc C++ STL Stuff
 
+- Max Optimisations
+
+```c++
+#pragma GCC optimize("Ofast","inline","fast-math","unroll-loops","no-stack-protector")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,tune=native","f16c")
+
+static auto _ = [] () {ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
+```
+
 - Faster I/O
 ```c++
 #pragma GCC optimize("Ofast")
